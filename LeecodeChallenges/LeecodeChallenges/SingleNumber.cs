@@ -6,9 +6,15 @@ public class Solution00136
     {
         var newNums = nums.OrderBy(a => a).ToArray();
         var result = newNums[0];
-        for(var i=1; i<newNums.Count(); i++)
+        var cnt = nums.Length;
+        for (var i = 1; i < cnt; i++)
         {
-            if(newNums[i] != nums[i-1] && newNums[i] != nums[i + 1])
+            if (i == cnt - 1 && newNums[i] != newNums[i - 1])
+            {
+                result = newNums[i];
+                break;
+            }
+            else if (newNums[i] != newNums[i - 1] && newNums[i] != newNums[i + 1])
             {
                 result = newNums[i];
                 break;
