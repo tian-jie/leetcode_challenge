@@ -11,7 +11,7 @@ namespace Solution
         {
             var nums = new List<string>() { "flower", "flow", "flight" };
 
-            var obj = new Solution14();
+            var obj = new Solution00014();
             var result = obj.LongestCommonPrefix(nums.ToArray());
 
             Assert.Equal("fl", result);
@@ -21,7 +21,7 @@ namespace Solution
         {
             var nums = new List<string>() { "flower", "flowar", "flawer" };
 
-            var obj = new Solution14();
+            var obj = new Solution00014();
             var result = obj.LongestCommonPrefix(nums.ToArray());
 
             Assert.Equal("fl", result);
@@ -31,7 +31,7 @@ namespace Solution
         {
             var nums = new List<string>() {  };
 
-            var obj = new Solution14();
+            var obj = new Solution00014();
             var result = obj.LongestCommonPrefix(nums.ToArray());
 
             Assert.Equal("", result);
@@ -41,7 +41,7 @@ namespace Solution
         {
             var nums = new List<string>() { "flower" };
 
-            var obj = new Solution14();
+            var obj = new Solution00014();
             var result = obj.LongestCommonPrefix(nums.ToArray());
 
             Assert.Equal("flower", result);
@@ -51,7 +51,7 @@ namespace Solution
         {
             var nums = new List<string>() { "flower", "flow", "flight" };
 
-            var obj = new Solution14();
+            var obj = new Solution00014();
             var result = obj.LongestCommonPrefix(nums.ToArray());
 
             Assert.Equal("fl", result);
@@ -61,7 +61,7 @@ namespace Solution
         {
             var nums = new List<string>() { "flower", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight" };
 
-            var obj = new Solution14();
+            var obj = new Solution00014();
             var result = obj.LongestCommonPrefix(nums.ToArray());
 
             Assert.Equal("fl", result);
