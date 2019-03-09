@@ -1,87 +1,92 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using Xunit;
+﻿using System;
+using System.Collections.Generic;
+using Xunit;
 
-//namespace Solution
-//{
-//    public class LongestPalindrome_test
-//    {
-//        [Fact]
-//        public void Case1()
-//        {
-//            var nums1 = new List<int>() { 1, 2, 4 };
-//            var nums2 = new List<int>() { 1, 3, 4 };
+namespace Solution
+{
+    public class LongestPalindrome_test
+    {
+        Solution00005 obj = new Solution00005();
 
-//            var n1 = ConvertListToListNode(nums1);
-//            var n2 = ConvertListToListNode(nums2);
+        [Fact]
+        public void Case1()
+        {
+            var s = "ababcba";
+            var result = obj.LongestPalindrome(s);
 
-//            var obj = new Solution00013();
-//            var result = obj.LongestCommonPrefix(nums.ToArray());
+            Assert.Equal("abcba", result);
+        }
 
-//            Assert.Equal("fl", result);
-//        }
-//        [Fact]
-//        public void Case2()
-//        {
-//            var nums = new List<string>() { "flower", "flowar", "flawer" };
+        [Fact]
+        public void Case2()
+        {
+            var s = "a";
+            var result = obj.LongestPalindrome(s);
 
-//            var obj = new Solution00014();
-//            var result = obj.LongestCommonPrefix(nums.ToArray());
+            Assert.Equal("a", result);
+        }
 
-//            Assert.Equal("fl", result);
-//        }
-//        [Fact]
-//        public void Case3()
-//        {
-//            var nums = new List<string>() {  };
+        [Fact]
+        public void Case3()
+        {
+            var s = "abcdefg";
+            var result = obj.LongestPalindrome(s);
 
-//            var obj = new Solution00014();
-//            var result = obj.LongestCommonPrefix(nums.ToArray());
+            Assert.Equal("a", result);
+        }
 
-//            Assert.Equal("", result);
-//        }
-//        [Fact]
-//        public void Case4()
-//        {
-//            var nums = new List<string>() { "flower" };
+        [Fact]
+        public void Case4()
+        {
+            var s = "1234567890987654321";
+            var result = obj.LongestPalindrome(s);
 
-//            var obj = new Solution00014();
-//            var result = obj.LongestCommonPrefix(nums.ToArray());
+            Assert.Equal("1234567890987654321", result);
+        }
 
-//            Assert.Equal("flower", result);
-//        }
-//        [Fact]
-//        public void Case5()
-//        {
-//            var nums = new List<string>() { "flower", "flow", "flight" };
+        [Fact]
+        public void Case5()
+        {
+            var s = "12345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321";
+            var result = obj.LongestPalindrome(s);
 
-//            var obj = new Solution00014();
-//            var result = obj.LongestCommonPrefix(nums.ToArray());
+            Assert.Equal("12345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321123456789098765432112345678909876543211234567890987654321", result);
+        }
 
-//            Assert.Equal("fl", result);
-//        }
-//        [Fact]
-//        public void Case6()
-//        {
-//            var nums = new List<string>() { "flower", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight", "flow", "flight" };
+        [Fact]
+        public void Case6()
+        {
+            var s = "abccccab";
+            var result = obj.LongestPalindrome(s);
 
-//            var obj = new Solution00014();
-//            var result = obj.LongestCommonPrefix(nums.ToArray());
+            Assert.Equal("cccc", result);
+        }
 
-//            Assert.Equal("fl", result);
-//        }
+        [Fact]
+        public void Case7()
+        {
+            var s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            var result = obj.LongestPalindrome(s);
 
-//        private Solution00021.ListNode ConvertListToListNode(List<int> nums)
-//        {
-//            var result = new Solution00021.ListNode(nums[0]);
-//            var r = result;
-//            for(var i=1; i<nums.Count; i++)
-//            {
-//                r.next = new Solution00021.ListNode(nums[i]);
-//                r = r.next;
-//            }
+            Assert.Equal("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", result);
+        }
 
-//            return result;
-//        }
-//    }
-//}
+        [Fact]
+        public void Case8()
+        {
+            var s = "aaaaaaaaa";
+            var result = obj.LongestPalindrome(s);
+
+            Assert.Equal("aaaaaaaaa", result);
+        }
+        [Fact]
+        public void Case9()
+        {
+            var s = "aaaaaaaaab";
+            var result = obj.LongestPalindrome(s);
+
+            Assert.Equal("aaaaaaaaa", result);
+        }
+
+    }
+}

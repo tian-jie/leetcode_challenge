@@ -1,48 +1,39 @@
 ﻿
 public class Solution00021
 {
-    public ListNode MergeTwoLists1(ListNode l1, ListNode l2)
+    public ListNode MergeTwoLists(ListNode l1, ListNode l2)
     {
-        if (l1 == null)
+        var l = new ListNode(0);
+        var result = l;
+        while (l1 != null && l2 != null)
         {
-            return l2;
-        }
-        if (l2 == null)
-        {
-            return l1;
-        }
-
-        var min = (l1.val <= l2.val ? l1 : l2);
-        var max = (l1.val > l2.val ? l1 : l2);
-
-        var ll = new ListNode(min.val);
-        var result = ll;
-        min = min.next;
-        while (min != null)
-        {
-            while (max != null && max.val <= min.val)
+            if(l1.val <= l2.val)
             {
-                ll.next = new ListNode(max.val);
-                ll = ll.next;
-                max = max.next;
+                l.next = l1;
+                l1 = l1.next;
             }
-
-            ll.next = new ListNode(min.val);
-            ll = ll.next;
-            min = min.next;
+            else
+            {
+                l.next = l2;
+                l2 = l2.next;
+            }
+            l = l.next;
         }
 
-        while (max != null)
+        if(l1 != null)
         {
-            ll.next = new ListNode(max.val);
-            ll = ll.next;
-            max = max.next;
+            l.next = l1;
+        }
+        else
+        {
+            l.next = l2;
         }
 
-        return result;
+
+        return result.next;
     }
 
-    public ListNode MergeTwoLists(ListNode l1, ListNode l2)
+    public ListNode MergeTwoLists1(ListNode l1, ListNode l2)
     {
         if (l1 == null)
         {
