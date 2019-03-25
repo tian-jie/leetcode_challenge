@@ -4,9 +4,9 @@ using Xunit;
 
 namespace LeecodeChallenges.Test
 {
-    public class Solution_12_IntToRomanTest
+    public class Solution_00012_IntToRomanTest
     {
-        Solution_12_IntToRoman obj = new Solution_12_IntToRoman();
+        Solution_00012_IntToRoman obj = new Solution_00012_IntToRoman();
         [Fact]
         public void case_1()
         {
@@ -130,6 +130,7 @@ namespace LeecodeChallenges.Test
 
             Assert.Equal("XIV", result);
         }
+
 
         [Fact]
         public void case_999()

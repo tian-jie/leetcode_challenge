@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace LeecodeChallenges
 {
-    public class Solution_20_Valid_Parentheses
+    public class Solution_00020_Valid_Parentheses
     {
         public bool IsValid(string s)
         {
