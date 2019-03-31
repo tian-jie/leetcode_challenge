@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeecodeChallenges", "LeecodeChallenges\LeecodeChallenges.csproj", "{2288164F-CB7B-4881-B99F-C0AEEB82EBE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetcodeChallenges", "LeecodeChallenges\LeetcodeChallenges.csproj", "{2288164F-CB7B-4881-B99F-C0AEEB82EBE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeecodeChallenges.Test", "..\LeecodeChallenges.Test\LeecodeChallenges.Test.csproj", "{687806B3-41CA-4CCF-836A-C1BC08106028}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetcodeChallenges.Test", "..\LeecodeChallenges.Test\LeetcodeChallenges.Test.csproj", "{687806B3-41CA-4CCF-836A-C1BC08106028}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace LeecodeChallenges.Test
+namespace LeetcodeChallenges.Test
 {
     public class Solution_00003_LengthOfLongestSubstringTest
     {

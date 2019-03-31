@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LeecodeChallenges\LeecodeChallenges\LeecodeChallenges.csproj" />
+    <ProjectReference Include="..\LeecodeChallenges\LeecodeChallenges\LeetcodeChallenges.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 ﻿
-public class Solution00021
+public class Solution_00021_MergeTwoLists
 {
     public ListNode MergeTwoLists(ListNode l1, ListNode l2)
     {

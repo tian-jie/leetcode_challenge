@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace LeecodeChallenges
+namespace LeetcodeChallenges
 {
     public class Solution_00011_MaxArea
     {

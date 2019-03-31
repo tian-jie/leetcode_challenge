@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LeecodeChallenges
+namespace LeetcodeChallenges
 {
     public class Solution_00022_GenerateParenthesis
     {

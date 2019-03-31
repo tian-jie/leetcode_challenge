@@ -2,16 +2,16 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace LeecodeChallenges.Test
+namespace LeetcodeChallenges.Test
 {
-    public class Solution_16_3sumClosetTest
+    public class Solution_00016_3sumClosetTest
     {
         [Fact]
         public void Case1()
         {
             var nums = new List<int>() { -1, 2, 1, -4 };
 
-            var obj = new Solution_16_3sumCloset();
+            var obj = new Solution_00016_3sumCloset();
             var result = obj.ThreeSumClosest(nums.ToArray(), 1);
 
             Assert.Equal(2, result);
@@ -22,7 +22,7 @@ namespace LeecodeChallenges.Test
         {
             var nums = new List<int>() { 0,0,0 };
 
-            var obj = new Solution_16_3sumCloset();
+            var obj = new Solution_00016_3sumCloset();
             var result = obj.ThreeSumClosest(nums.ToArray(), 2);
 
             Assert.Equal(0, result);
@@ -33,7 +33,7 @@ namespace LeecodeChallenges.Test
         {
             var nums = new List<int>() { 1,2,3 };
 
-            var obj = new Solution_16_3sumCloset();
+            var obj = new Solution_00016_3sumCloset();
             var result = obj.ThreeSumClosest(nums.ToArray(), 3);
 
             Assert.Equal(6, result);

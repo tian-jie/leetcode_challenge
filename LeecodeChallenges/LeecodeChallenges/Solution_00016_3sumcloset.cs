@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace LeecodeChallenges
+namespace LeetcodeChallenges
 {
-    public class Solution_16_3sumCloset
+    public class Solution_00016_3sumCloset
     {
         public int ThreeSumClosest(int[] nums, int target)
         {

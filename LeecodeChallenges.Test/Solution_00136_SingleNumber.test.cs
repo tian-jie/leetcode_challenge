@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using Xunit;
 
-namespace Solution
+namespace LeetcodeChallenges.Test
 {
-    public class SingleNumber_test
+    public class Solution_00136_SingleNumberTest
     {
-        Solution00136 obj = new Solution00136();
+        Solution_00136_SingleNumber obj = new Solution_00136_SingleNumber();
 
         [Fact]
         public void Case1()

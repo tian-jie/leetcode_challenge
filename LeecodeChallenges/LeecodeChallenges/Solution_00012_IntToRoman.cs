@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace LeecodeChallenges
+namespace LeetcodeChallenges
 {
     public class Solution_00012_IntToRoman
     {

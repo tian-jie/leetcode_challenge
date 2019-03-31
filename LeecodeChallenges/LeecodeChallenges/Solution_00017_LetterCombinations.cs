@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LeecodeChallenges
+namespace LeetcodeChallenges
 {
     public class Solution_00017_LetterCombinations
     {

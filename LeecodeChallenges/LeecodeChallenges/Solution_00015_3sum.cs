@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace LeecodeChallenges
+namespace LeetcodeChallenges
 {
-    public class Solution_15_3sum
+    public class Solution_00015_3sum
     {
         public IList<IList<int>> ThreeSum(int[] nums)
         {

@@ -2,7 +2,7 @@ using System.Linq;
 using System.Text;
 using Xunit;
 
-namespace LeecodeChallenges.Test
+namespace LeetcodeChallenges.Test
 {
     public class Solution_00017_LetterCombinationsTest
     {

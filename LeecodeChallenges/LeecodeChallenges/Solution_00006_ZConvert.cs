@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace LeecodeChallenges
+namespace LeetcodeChallenges
 {
     public class Solution_00006_ZConvert
     {

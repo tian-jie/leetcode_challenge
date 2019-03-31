@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-public class Solution00136
+public class Solution_00136_SingleNumber
 {
     public int SingleNumber(int[] nums)
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-public class Solution00005
+public class Solution_00005_LongestPalindrome
 {
     Dictionary<char, List<int>> _dic = new Dictionary<char, List<int>>();
     string _s = "";

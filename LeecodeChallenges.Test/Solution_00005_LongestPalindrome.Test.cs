@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using Xunit;
 
-namespace Solution
+namespace LeetcodeChallenges.Test
 {
-    public class LongestPalindrome_test
+    public class Solution_00005_LongestPalindromeTest
     {
-        Solution00005 obj = new Solution00005();
+        Solution_00005_LongestPalindrome obj = new Solution_00005_LongestPalindrome();
 
         [Fact]
         public void Case1()

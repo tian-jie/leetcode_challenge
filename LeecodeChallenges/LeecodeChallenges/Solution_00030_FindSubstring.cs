@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-public class Solution00030
+public class Solution_00030_FindSubstring
 {
     private List<string> _wordsStrs =new List<string>();
     private string[] _tempWords = null;

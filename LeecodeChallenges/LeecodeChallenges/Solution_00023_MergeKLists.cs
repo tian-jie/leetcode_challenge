@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LeecodeChallenges
+namespace LeetcodeChallenges
 {
     public class Solution_00023_MergeKLists
     {

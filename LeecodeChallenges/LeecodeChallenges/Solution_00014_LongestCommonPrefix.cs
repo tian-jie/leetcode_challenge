@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-public class Solution00014
+public class Solution_00014_LongestCommonPrefix
 {
     public string LongestCommonPrefix(string[] strs)
     {

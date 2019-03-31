@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace Solution
+namespace LeetcodeChallenges.Test
 {
-    public class MergeTwoLists_test
+    public class Solution_00021_MergeTwoListsTest
     {
-        Solution00021 obj = new Solution00021();
+        Solution_00021_MergeTwoLists obj = new Solution_00021_MergeTwoLists();
 
         [Fact]
         public void Case1()
@@ -64,20 +64,20 @@ namespace Solution
             Assert.Equal("12", ConvertNodeListToString(result));
         }
 
-        private Solution00021.ListNode ConvertListToListNode(List<int> nums)
+        private Solution_00021_MergeTwoLists.ListNode ConvertListToListNode(List<int> nums)
         {
-            var result = new Solution00021.ListNode(0);
+            var result = new Solution_00021_MergeTwoLists.ListNode(0);
             var r = result;
             for (var i = 0; i < nums.Count; i++)
             {
-                r.next = new Solution00021.ListNode(nums[i]);
+                r.next = new Solution_00021_MergeTwoLists.ListNode(nums[i]);
                 r = r.next;
             }
 
             return result.next;
         }
 
-        private string ConvertNodeListToString(Solution00021.ListNode node)
+        private string ConvertNodeListToString(Solution_00021_MergeTwoLists.ListNode node)
         {
             var sb = new StringBuilder();
             while (node != null)
