@@ -15,7 +15,7 @@ namespace LeetcodeChallenges.Test
             var node = BuildFromArray(new int[] { 1 });
             var result = obj.ReverseKGroup(node, 3);
 
-            Assert.Equal("1", NodeListToString(result));
+            Assert.Equal("1", Common.NodeListToString(result));
         }
 
         [Fact]
@@ -24,7 +24,7 @@ namespace LeetcodeChallenges.Test
             var node = BuildFromArray(new int[] { 1,2 });
             var result = obj.ReverseKGroup(node, 3);
 
-            Assert.Equal("12", NodeListToString(result));
+            Assert.Equal("12", Common.NodeListToString(result));
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace LeetcodeChallenges.Test
             var node = BuildFromArray(new int[] { 1,2,3 });
             var result = obj.ReverseKGroup(node, 3);
 
-            Assert.Equal("321", NodeListToString(result));
+            Assert.Equal("321", Common.NodeListToString(result));
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace LeetcodeChallenges.Test
             var node = BuildFromArray(new int[] { 1, 2, 3, 4 });
             var result = obj.ReverseKGroup(node, 3);
 
-            Assert.Equal("3214", NodeListToString(result));
+            Assert.Equal("3214", Common.NodeListToString(result));
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace LeetcodeChallenges.Test
             var node = BuildFromArray(new int[] { });
             var result = obj.ReverseKGroup(node, 3);
 
-            Assert.Equal("", NodeListToString(result));
+            Assert.Equal("", Common.NodeListToString(result));
         }
 
         [Fact]
@@ -60,7 +60,7 @@ namespace LeetcodeChallenges.Test
             var node = BuildFromArray(new int[] { 1, 2, 3, 4, 5 });
             var result = obj.ReverseKGroup(node, 3);
 
-            Assert.Equal("32145", NodeListToString(result));
+            Assert.Equal("32145", Common.NodeListToString(result));
         }
 
         [Fact]
@@ -69,7 +69,7 @@ namespace LeetcodeChallenges.Test
             var node = BuildFromArray(new int[] { 1, 2, 3, 4, 5, 6 });
             var result = obj.ReverseKGroup(node, 3);
 
-            Assert.Equal("321654", NodeListToString(result));
+            Assert.Equal("321654", Common.NodeListToString(result));
         }
 
 
@@ -79,7 +79,7 @@ namespace LeetcodeChallenges.Test
             var node = BuildFromArray(new int[] { 1, 2, 3, 4, 5, 6, 7 });
             var result = obj.ReverseKGroup(node, 3);
 
-            Assert.Equal("3216547", NodeListToString(result));
+            Assert.Equal("3216547", Common.NodeListToString(result));
         }
 
         [Fact]
@@ -88,7 +88,7 @@ namespace LeetcodeChallenges.Test
             var node = BuildFromArray(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
             var result = obj.ReverseKGroup(node, 3);
 
-            Assert.Equal("32165478", NodeListToString(result));
+            Assert.Equal("32165478", Common.NodeListToString(result));
         }
 
         [Fact]
@@ -97,7 +97,7 @@ namespace LeetcodeChallenges.Test
             var node = BuildFromArray(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 });
             var result = obj.ReverseKGroup(node, 3);
 
-            Assert.Equal("3216549871011", NodeListToString(result));
+            Assert.Equal("3216549871011", Common.NodeListToString(result));
         }
 
 
@@ -127,16 +127,6 @@ namespace LeetcodeChallenges.Test
 
             return head.next;
         }
-        private String NodeListToString(ListNode node)
-        {
-            var sb = new StringBuilder();
 
-            for (var pNode = node; pNode != null; pNode = pNode.next)
-            {
-                sb.Append(pNode.val.ToString());
-            }
-
-            return sb.ToString();
-        }
     }
 }

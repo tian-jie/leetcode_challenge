@@ -4,95 +4,145 @@ using System.Text;
 
 public class Solution_00030_FindSubstring
 {
-    private List<string> _wordsStrs =new List<string>();
-    private string[] _tempWords = null;
-    private int _wordCnt = 0;
-    private string _firstChs = "";
+    private int _wordsNums = 0;
+    private string[] _words = null;
+    private string _expectedWordsIntString = "";
+    Dictionary<int, List<WordInfo>> _positionWordsDic = new Dictionary<int, List<WordInfo>>();
+
+    List<int> _result = new List<int>();
+
 
     public IList<int> FindSubstring(string s, string[] words)
     {
-        _tempWords = (string[])words.Clone();
-        _wordCnt = words.Length;
-
-        var firstChsSB = new StringBuilder();
-        foreach(var word in words)
+        _wordsNums = words.Length;
+        var sLen = s.Length;
+        _words = words;
+        StringBuilder sb = new StringBuilder();
+        for (var i = 0; i < words.Length; i++)
         {
-            firstChsSB.Append(word[0]);
+            sb.Append(i.ToString());
         }
+        _expectedWordsIntString = sb.ToString();
 
-        _firstChs = firstChsSB.ToString();
+        // 扫描整个字符串，将这个字符串每个位置的字母能组成哪个单词，都写到这个对象里，回头从这个对象里找能够拼起来的单词组合
 
-        // 先组合string的所有可能
-        ExhaustionWords(0);
-
-        // 开始循环各个字符
-        var result = new List<int>();
-        var sIndex = 0;
-
-        for(sIndex=0; sIndex<s.Length; sIndex++)
+        for (var i = 0; i < sLen; i++)
         {
-            var c = s[sIndex];
-            if (!_firstChs.Contains(c))
+            var c = s[i];
+            // 以c为一个单词的结尾去查找单词
+            for (var wIndex = 0; wIndex < words.Count(); wIndex++)
             {
-                continue;
-            }
-            foreach (var wordsStr in _wordsStrs)
-            {
-                var isSame = true;
-                if (wordsStr[0] != c)
+                var w = words[wIndex];
+                var index = w.Length - 1;
+                var equalWord = false;
+                while (index >= 0 && i - w.Length + index + 1 >= 0)
                 {
-                    // 先判断第一个字符，如果相同，则看接下来的字符是否相同，如果都相同，就存一个
-                    continue;
-                }
-                var wordStrIndex = 0;
-                for (wordStrIndex = 1; wordStrIndex< wordsStr.Length; wordStrIndex++)
-                {
-                    if (sIndex + wordStrIndex>=s.Length || wordsStr[wordStrIndex]!=s[sIndex+ wordStrIndex])
+                    equalWord = true;
+                    if (s[i - w.Length + index + 1] != w[index])
                     {
-                        isSame = false;
+                        equalWord = false;
                         break;
                     }
+                    index--;
                 }
-                if (isSame)
+                // 到此为止，这个单词相等，放到dic里
+                if (equalWord)
                 {
-                    result.Add(sIndex);
+                    var startIndex = i - w.Length + 1;
+                    if (startIndex >= 0)
+                    {
+                        var wordInfo = new WordInfo() { Length = w.Length, word = w, StartIndex = startIndex, WordIndex = wIndex };
+                        if (!_positionWordsDic.Keys.Contains(startIndex))
+                        {
+                            _positionWordsDic.Add(startIndex, new List<WordInfo>());
+                        }
+                        _positionWordsDic[startIndex].Add(wordInfo);
+                    }
+                }
+            }
+        }
+
+        if (_positionWordsDic.Keys.Count() == 0)
+        {
+            return _result;
+        }
+
+        // 根据扫描完的数据进行组合
+        // 采用深度优先搜索的方式
+
+        // 第一个int放位置
+        // 第二个int放word的index
+        var tmpDic = new Dictionary<int, int>();
+        foreach (var key in _positionWordsDic.Keys)
+        {
+            foreach (var wi in _positionWordsDic[key])
+            {
+                tmpDic.Add(key, wi.WordIndex);
+                ContainsQueue(tmpDic, key + wi.Length);
+                tmpDic.Remove(key);
+            }
+        }
+
+
+        return _result;
+    }
+
+    private void ContainsQueue(Dictionary<int, int> wordList, int nextIndex)
+    {
+        // 先添加下一个
+        if (!_positionWordsDic.Keys.Contains(nextIndex) && wordList.Count < _wordsNums)
+        {
+            return;
+        }
+
+        if (wordList.Count < _wordsNums)
+        {
+            foreach (var wi in _positionWordsDic[nextIndex])
+            {
+                wordList.Add(nextIndex, wi.WordIndex);
+                ContainsQueue(wordList, nextIndex + wi.Length);
+                wordList.Remove(nextIndex);
+            }
+        }
+        else if (IntListToString(wordList.Values.OrderBy(a => a).ToList()) == _expectedWordsIntString)
+        {
+            var result = wordList.Keys.Min();
+            // 还要判断这个结果以前出现过没
+            var duplicated = false;
+            foreach (var r in _result)
+            {
+                if (r == result)
+                {
+                    duplicated = true;
                     break;
                 }
+
             }
-        }
-
-
-        return result;
-    }
-
-    private void ExhaustionWords(int deepth)
-    {
-        if (deepth == _wordCnt)
-        {
-            //var s = new StringBuilder();
-            //foreach(var tw in _tempWords)
-            //{
-            //    s.Append(tw);
-            //}
-
-            //_wordsStrs.Add(s.ToString());
-        }
-        else
-        {
-            for (int i = deepth; i < _wordCnt; i++)
+            // 如果相同了，就是一个结果啦
+            if (!duplicated)
             {
-                Swap(i, deepth);
-                ExhaustionWords(deepth + 1);
-                Swap(i, deepth);
+                _result.Add(result);
             }
         }
+        return;
     }
 
-    private void Swap(int x, int y)
+    private static string IntListToString(List<int> l)
     {
-        var ts = _tempWords[x];
-
-        _tempWords[x] = _tempWords[y];
-        _tempWords[y] = ts;
+        var sb = new StringBuilder();
+        foreach (var i in l)
+        {
+            sb.Append(i.ToString());
+        }
+        return sb.ToString();
     }
+    class WordInfo
+    {
+        public int Length;
+        public string word;
+        public int StartIndex;
+        public int WordIndex;
+    }
+
+
 }
