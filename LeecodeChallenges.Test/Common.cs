@@ -18,11 +18,20 @@ namespace LeetcodeChallenges.Test
             return sb.ToString();
         }
 
-        public static String IntListToString(int[] l)
+        public static String IntListToString(int[] l, int length = -1)
         {
+            if(length == -1)
+            {
+                length = l.Length;
+            }
             var sb = new StringBuilder();
+            var index = 0;
             foreach(var n in l)
             {
+                if (index++ == length)
+                {
+                    break;
+                }
                 sb.Append(n.ToString());
                 sb.Append(',');
             }
