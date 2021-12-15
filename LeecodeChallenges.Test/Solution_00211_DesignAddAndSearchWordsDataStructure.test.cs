@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Solution_00211_DesignAddAndSearchWordsDataStructure;
 using Xunit;
 
 namespace LeetcodeChallenges.Test
