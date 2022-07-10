@@ -76,6 +76,26 @@ namespace LeetcodeChallenges.Test
                 "85421976339786542126147398578512639464953", result);
         }
 
+        [Fact]
+        public void Case_04()
+        {
+            var s =
+                "..53....." +
+                "8......2." +
+                ".7..1.5.." +
+                "4....53.." +
+                ".1..7...6" +
+                "..32...8." +
+                ".6.5....9" +
+                "..4....3." +
+                ".....97..";
+            var arr = ConvertStringToIntArr(s);
+            obj.SolveSudoku(arr);
+            var result = ConvertIntArrToString(arr);
+            //Assert.StartsWith(
+            //    "85421976339786542126147398578512639464953", result);
+        }
+
 
 
         private char[][] ConvertStringToIntArr(string s)
