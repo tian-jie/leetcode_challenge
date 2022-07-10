@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace LeetcodeChallenges
+namespace LeetcodeChallenges_Challenge_05017_SumRootToLeaf
 {
     public class Challenge_05017_SumRootToLeaf
     {
